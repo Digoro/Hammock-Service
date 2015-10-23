@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+            <header>
+                <div id="user-info-box">
+                    <span><%= current_user.email %></span>
+                    <span><%= link_to "로그아웃", destroy_user_session_path, :method => :'get' %></span>
+                </div>
+                
+                <h1 id="home-logo">
+                    <a href="/home/index"><img src="/assets/hammock-logo.png" alt="Hammock"></a>
+                </h1>
+                
+                <div id="gnb">
+                    <a href='/home/index'>오늘의 질문</a>
+                    <a href='/home/myHammock'>마이해먹</a>
+                </div>
+            </header>
+<% end %>

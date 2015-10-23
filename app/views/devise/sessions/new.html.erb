@@ -1,0 +1,52 @@
+<div id="video-container">
+  <video autoplay loop class="fillWidth">
+      <source src="/img/NYC-Traffic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      <source src="/img/NYC-Traffic.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+  </video>
+</div>
+
+
+<div id="container">
+  
+  <div id="joinbox">
+    <%= render "devise/shared/links" %>
+  </div>
+  
+  <div align="center" id="loginbox">
+    <h1>
+      <span>질문을 통해<br>나를 발견하는 공간</span>
+      <div>
+    	<img src="/assets/hammock-logo.png" alt="Hammock"><br>
+    </h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        
+        <%= f.email_field :email, autofocus: true, :placeholder => "이메일" %>
+      </div>
+    
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "off", :placeholder => "비밀번호" %>
+      </div>
+      
+      
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :로그인상태유지 %>
+        </div>
+      <% end -%>
+      
+        
+        <div class="actions">
+          
+        <input type="submit" name="commit" value="로그인" class="btn-login">
+      </div>
+    <% end %>
+    
+    <div id="failed"><%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %></div>
+    <div id="successed"><%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %></div>
+     
+  </div>
+ 
+</div>
+

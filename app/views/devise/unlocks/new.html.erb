@@ -1,0 +1,16 @@
+<h2>잠금해체 지침을 나에게 다시 보내기</h2>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "다시 보내기" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

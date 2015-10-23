@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    </head>
+    <body>
+        <div id="video-container">
+          <video autoplay loop class="fillWidth" poster="/img/NYC-Traffic.jpg">
+              <source src="/img/NYC-Traffic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="/img/NYC-Traffic.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+        </div>
+        <div id="container">
+            <% if user_signed_in? %>
+            <%= render :partial =>"include/gnb" %>
+            <!-- 로그인 한 후에 오늘 질문에 대한 답변이 없으면 오늘 질문을 출력 답변이 있으면 답변을 출력 -->
+                <% if @checked.nil? %>
+            <div id="center_for_question" style="text-align:center;">
+                    <h2>오늘의 질문</h2>
+                    <h3><%= @todayQuestion._date %></h3>
+                    <span class="underline"></span>
+                    <h4><%= @todayQuestion.item %></h4>
+                    <div id="answer_box">
+                        <form action="/home/answer" method="POST" enctype="multipart/form-data">
+                            <input style="display:none;" type="text" value="<%=@today%>" name="question"></input>
+                                <br><textarea class="answer_area" rows="5" cols="60" name="content">질문을 보고 떠오르는 생각을 편안하게 적어 보세요.
+왜 그렇게 생각하시나요?</textarea><br>
+                            <span class="btn_answer_submit" onclick="writeSubmit()">답변하기</span>
+                        </form>
+                    </div>
+                    <span class="btn_answer">답변하기</span>
+            
+            </div>
+                <% else %>
+                <div id="center_for_answer">
+                    <h3><%= @checked._date %></h3>
+                    <span class="underline"></span>
+                    <div>
+                        <h4><%= @checked.todayQuestion %></h4>
+                        <p><%= @checked.usersAnswer %></p>
+                        
+                    </div>
+                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">
+                        수정하기
+                    </button>
+                </div>
+                <% end %>
+            
+            
+            <% end %>
+                <!--<div class="poster hidden">
+                    <img src="/img/NYC-Traffic.jpg" alt="Your browser cannot load img resources.">
+                </div>-->
+        </div>
+        
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color:black;"><%= @todayQuestion.item%></h4>
+      </div>
+      <form action ="/home/updateAnswer" method = "GET">
+        <div class="modal-body">
+            <% if @checked.nil? %>
+            <textarea rows="5" cols="79" name="changedAnswer" style="color:black;">default</textarea>
+            <% else %>
+            <textarea rows="5" cols="79"name="changedAnswer" style="color:black;"><%= @checked.usersAnswer %></textarea>
+            <% end %>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" type="button" data-dismiss="modal">닫기</button>
+            <button class="btn btn-default" type="submit" >수정하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+    <script>
+        $( document ).ready(function() {
+           
+            function t(f,ms){setTimeout(f, ms)}
+            t(function() { $('#center_for_answer').fadeIn('slow') }, 80);
+            t(function() { $('#center_for_answer').css('margin','165px') }, 100);
+            t(function() { $('#center_for_question').fadeIn('slow') }, 500);
+            t(function() { $('#center_for_question').css('margin','205px 0 0 0') }, 500);
+            t(function() { $('.btn_answer').fadeIn('slow') }, 1000);
+            t(function() { $('.btn_answer').css('display','block') }, 1000);
+            t(function() { $('#center_for_question > h4').css('padding','65px 0 35px') }, 1000);
+               
+        });
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<footer>
+  <span class="btn-footer-open">Hammock?</span>
+  <div id="footer_story" class="footer_stroy">
+     <div class="story_box fs01">
+         <img class="title1" src="/assets/title2.png">
+         <img class="ob1" src="/assets/ob2.png">
+         <span class="btn1">></span>
+     </div>
+     <div class="story_box fs02">
+         <img class="mob2" src="/assets/cloud.gif">
+         <img class="ob2" src="/assets/ob2.png">
+         <p class="text2">일 분 일 초 단위로 변해가는 세상.<br>
+우리들은 모두 <span>삶</span>이라는 <span>바다</span>에 빠져있었습니다.<br> 
+<span>삶</span>에는 <span>매 순간 파도와 풍랑이 몰아쳤습니다.</span><br>
+스스로도 모르는 사이에 삶 속에 던져진 우리는,<br>
+시시각각 변하는 삶의 한 가운데에서 살아남기에도 바빴습니다.</p><br>
+         <span class="btn2">></span>
+     </div>
+     <div class="story_box fs03">
+         <img class="mob3" src="/assets/hm.png">
+         <img class="mob4" src="/assets/q.png">
+         <img class="ob3" src="/assets/ob2.png">
+         <p class="text3">그러던 어느 날,<br>
+여유가 필요하다고 느낀 사람들은 힘을 합쳐 무인도 야자나무 숲 그늘 아래<br>무지개색 해먹들을 묶어놓고
+친구들을 초대하기 시작했습니다.<br>
+무인도에 초대된 친구들은 해먹 위에 누웠습니다.<br>
+‘나의 삶’과‘내 주변의 삶’과 ‘세상 모든 것들’에 대하여
+생각해보기 시작했습니다.</p>
+         <span class="btn3">></span>
+     </div>
+      <div class="story_box fs04">
+         <p class="text4">그리고 어떻게 되었을까요?<br>
+         그 뒷 이야기는 당신이 들려주세요.</p>
+     </div>
+  </div>
+  <span class="btn-footer-close">close</span>
+</footer>
+<script src="/owl.carousel.js"></script>
+<script>
+$(function(){
+  //footer 해먹 설명 영역
+  function t(f,ms){
+        setTimeout(f, ms)
+    }
+    //answer interaction-question 
+    function anserInteraction(){
+        t(function() { $('#center_for_answer').fadeIn('slow') }, 500);
+        t(function() { $('#center_for_answer').css('margin','165px') }, 500);
+        t(function() { $('#center_for_question').fadeIn('slow') }, 500);
+        t(function() { $('#center_for_question').css('margin','160px 0 0 0') }, 500);
+        t(function() { $('.btn_answer').fadeIn('slow') }, 1000);
+        t(function() { $('.btn_answer').css('display','block') }, 1000);
+        t(function() { $('#center_for_question > h4').css('padding','65px 0 35px') }, 1000);
+    }
+    //answer interaction-write
+    var container = $('#container')
+    $('.btn_answer').click(function() {
+        $('#center_for_question').css('margin','140px')
+        $('#center_for_question > h4').css('padding','20px 40px')
+        $('.btn_answer').fadeOut();
+        t(function() { container.css('background','rgba(11,46,71,0.9)') })
+        t(function() { $('#answer_box').fadeIn('slow') }, 800)
+        t(function() { $('.btn_answer_submit').fadeIn('slow') }, 800)
+        t(function() { $('.btn_answer_submit').css('display','block') }, 800)
+    })
+    
+    //answer textarea 비우기
+    $('.answer_area').click(function() {
+        $('.answer_area').html('')
+    })
+    
+    //answer write submit
+    $('.btn_answer_submit').click(function() {
+        container.css('background','rgba(10,195,213,0.9');
+        $('#center_for_answer').fadeOut('slow');
+        t(function() { document.forms[0].submit() }, 1500);
+    })
+    
+    //footer 
+    var footer = $('footer')
+    $('.btn-footer-open').click(function(){
+        footer.css('height','100%')
+        t(function(){ $('.btn-footer-open').fadeOut()}, 1500);
+        t(function(){ $('.btn-footer-close').fadeIn()}, 2500);
+        t(function(){ $('.btn-footer-close').css('color','#000')}, 2500);
+        t(function(){ $('.btn-footer-close').css('display','block')}, 2500);
+        t(function(){ fs01()}, 2500);
+    });
+    
+    $('.btn-footer-close').click(function() {
+        $('.btn-footer-close').fadeOut()
+        $('footer').css('line-height','35px')
+        $('footer').css('background','#000');
+        $('footer').css('padding-top','0px');
+        $('footer').css('font-size','17px');
+        t(function(){ $('footer').css('height','35px') }, 1500);
+        t(function(){ $('.btn-footer-open').fadeIn() }, 1500);
+    });
+    
+    function fs01(){
+        $('.fs01').css('background','#fff')
+        t(function(){ $('.title1').fadeIn()},400)
+        t(function(){ $('.ob1').fadeIn() }, 800);
+        t(function(){ $('.btn1').fadeIn() }, 800);
+        t(function(){ $('.btn1').css('display','block') }, 1000);    
+    }
+    
+    $('.btn1').click(function(){
+        $('.fs01').css('background','#003a54')
+        $('.fs02').fadeIn()
+        $('.btn1').fadeOut()
+        t(function(){  $('.fs01').fadeOut() }, 250);
+        t(function(){ $('.ob2').fadeIn() }, 1200);
+        t(function(){ $('.mob2').fadeIn() }, 1500);
+        t(function(){ $('.text2').fadeIn() }, 1500);
+        t(function(){ $('.btn2').fadeIn() }, 1500);
+        t(function(){ $('.btn2').css('display','block') }, 1500); 
+        
+    })
+    
+    $('.btn2').click(function(){
+        $('.fs03').fadeIn()
+        $('.btn3').fadeOut()
+        t(function(){ $('.ob2').fadeOut() }, 1500);
+        t(function(){ $('.mob2').fadeOut() }, 1500);
+        t(function(){ $('.text2').fadeOut() }, 1500);
+        t(function(){ $('.fs02').fadeOut() }, 250);
+        t(function(){ $('.ob3').fadeIn() }, 1200);
+        t(function(){ $('.mob3').fadeIn() }, 1500);
+        t(function(){ $('.mob3').css('top','70%') }, 1500);
+        t(function(){ $('.text3').fadeIn() }, 1800);
+        t(function(){ $('.mob4').fadeIn() }, 2000);
+        t(function(){ $('.btn3').css('display','block') }, 1500); 
+    })
+    
+    $('.btn3').click(function(){
+        $('.fs02').fadeOut()
+        $('.fs04').fadeIn()
+        t(function(){ location.href='http://hammock-skidmarkii1-2.c9.io/users/sign_in'; }, 3000); 
+
+         
+    })
+
+})
+  
+$(document).ready(function() {
+  $("#cards_box").owlCarousel({
+      items : 3,
+      navigation : true,
+      pagination : true
+      
+  });
+  
+});
+</script>

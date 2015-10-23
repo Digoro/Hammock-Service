@@ -1,0 +1,199 @@
+// Place all the styles related to the include controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fs01 {
+    height:100%;
+    background:#000;
+    transition:background 0.5s;
+}
+.fs02 {
+    height:100%;
+    background:#003a54;
+}
+.fs03 {
+    height:100%;
+    background:#fff;
+    display:none;
+}
+.fs04 {
+    height:100%;
+    background:#fff;
+    display:none;
+}
+.text2 {
+    width:600px;
+    height:400px;
+    right:10%;
+    top:35%;
+    position:absolute;
+    display:none;
+    text-align:right !important;
+}
+
+.text3 {
+    width:600px;
+    height:400px;
+    right:10%;
+    top:35%;
+    position:absolute;
+    display:none;
+    text-align:right !important;
+    color:#323232 !important;
+}
+
+.text4 {
+    font-size:30px;
+    width:600px;
+    height:400px;
+    left:50%;
+    top:35%;
+    position:absolute;
+    display:none;
+    margin:0 0 0 -300px ;
+    text-align:center !important;
+    color:#323232 !important;
+}
+
+
+
+#footer_story {
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
+.story_box {
+    width:100%;
+    height:100%;
+    float:left;
+}
+
+.title1 {
+    width:300px;
+    position:absolute;
+    left:50%;
+    top:15%;
+    margin-left:-150px;
+    z-index:100;
+    display:none;
+    transition:width 0.5s, margin 0.5s;
+}
+
+.bg1 {
+    width:600px;
+    position:absolute;
+    left:50%;
+    top:20%;
+    margin-left:-300px;
+    z-index:1;
+    display:none;
+    transition:width 1s;
+}
+
+.btn1 {
+    position:absolute;
+    right:5%;
+    top:40%;
+    font-size:40px;
+    display:none;
+    cursor:pointer;
+    color:#000;
+}
+
+.btn2 {
+    position:absolute;
+    right:5%;
+    top:40%;
+    font-size:40px;
+    display:none;
+    cursor:pointer;
+}
+
+.btn3 {
+    position:absolute;
+    right:5%;
+    top:40%;
+    font-size:40px;
+    display:none;
+    cursor:pointer;
+    color:#454545;
+}
+
+
+
+.title2 {
+    width:400px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:12%;
+    margin-left:-200px;
+    z-index:100;
+    display:none;
+    transition:width 0.5s, margin 0.5s;
+}
+
+.title {
+    width:400px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:12%;
+    margin-left:-200px;
+    z-index:100;
+    display:none;
+    transition:width 0.5s, margin 0.5s;
+}
+
+.ob1 {
+    width:400px;
+    position:absolute;
+    left:50%;
+    bottom:20%;
+    margin: 0 0 0 -200px;
+    display:none;
+}
+
+
+.mob2 {
+    width:200px;
+    position:absolute;
+    top:30%;
+    left:16%;
+    display:none;
+}
+
+.mob3 {
+    width:225px;
+    position:absolute;
+    top:10%;
+    left:16%;
+    display:none;
+    z-index:300;
+}
+
+.mob4 {
+    width:200px;
+    position:absolute;
+    top:35%;
+    left:16%;
+    display:none;
+    z-index:400;
+}
+
+.ob3 {
+    width:400px;
+    position:absolute;
+    left:10%;
+    bottom:10%;
+    display:none;
+}
+
+.ob2 {
+    width:400px;
+    position:absolute;
+    left:10%;
+    bottom:10%;
+    display:none;
+}

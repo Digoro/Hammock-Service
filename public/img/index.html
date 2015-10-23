@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .homepage-hero-module {
+                border-right: none;
+                border-left: none;
+                position: relative;
+            }
+            .no-video .video-container video,
+            .touch .video-container video {
+                display: none;
+            }
+            .no-video .video-container .poster,
+            .touch .video-container .poster {
+                display: block !important;
+            }
+            .video-container {
+                position: relative;
+                bottom: 0%;
+                left: 0%;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                background: #000;
+            }
+            .video-container .poster img {
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+            }
+            .video-container .filter {
+                z-index: 100;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.4);
+                width: 100%;
+            }
+            .video-container video {
+                position: absolute;
+                z-index: 0;
+                bottom: 0;
+            }
+            .video-container video.fillWidth {
+                width: 100%;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="homepage-hero-module">
+            <div class="video-container">
+                <div class="filter"></div>
+                <video autoplay loop class="fillWidth">
+                    <source src="/img/NYC-Traffic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                    <source src="/img/NYC-Traffic.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
+                <div id="title" style = "position:absolute; top:35%; z-index:1000; width:100%; text-align:center; color:#fff">
+                    <h1>This is the title</h1>
+                        <% if user_signed_in? %>
+                        <p>Welcome, <%= current_user.email %></p>
+                        <a href='/users/sign_out'>Sign out</a>
+                        <% else %>
+                        <a href='/users/sign_in'>Sign in</a>
+                        <% end %>
+                </div>
+                <!--<div class="poster hidden">
+                    <img src="/img/NYC-Traffic.jpg" alt="Your browser cannot load img resources.">
+                </div>-->
+            </div>
+        </div>
+        
+        
+        
+    </body>
+</html>

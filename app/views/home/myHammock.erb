@@ -1,0 +1,60 @@
+<div id="video-container">
+    <video autoplay loop class="fillWidth">
+        <source src="/img/NYC-Traffic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="/img/NYC-Traffic.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+</div>
+<div id="container">
+    <%= render :partial =>"include/gnb" %>
+    <div id="page_title">
+        <h2>마이해먹</h2>
+        <p><%= current_user.email %>님, 당신의 마침표입니다.</p>
+        
+        <span class="underline"></span>
+    </div>
+    <div id="cards_box" class="cards_box">
+            <div class="empty_card">
+            </div>
+            <% @answers.each do |p| %>
+                <% if p.e_mail == current_user.email %>
+                    <div class="card">
+                      <% if p == @answers.last(1) %>
+                        <div class="answer_card">
+                              <a href="/">
+                                  <h3><%= p._date %></h3>
+                                  <span class="underline"></span>
+                                  <h4><%= p.todayQuestion %></h4>
+                                  <p style = "color:black"><%= p.usersAnswer %></p>
+                              </a>
+                          </div>
+                      <% else %>
+                          <span class="hammock"></span>
+                          <div class="answer_card">
+                              <a href="/">
+                                  <h3><%= p._date %></h3>
+                                  <span class="underline"></span>
+                                  <h4><%= p.todayQuestion %></h4>
+                                  <p style = "color:black"><%= p.usersAnswer %></p>
+                              </a>
+                          </div>
+                          <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+            
+    </div>
+    <div id="card_viewer">
+        
+    </div>
+    <!-- 여기는 인덱스 값을 이용하여 데이터를 가져오는 부분
+    레코드가 3개 미만이면 파인드 메소드에서 오류가 발생... 조건 검사를 통해서 분리가 필요
+    
+
+    < @answers.find([@index, @index+1 ,@index+2]).reverse_each do |p| >
+            일자 : <= p._date > <br>
+            질문 : <= p.todayQuestion %> <br>
+            답변 : <= p.usersAnswer %>
+            <br><br>
+    < end %>
+    -->
+</div>

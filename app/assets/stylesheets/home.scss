@@ -1,0 +1,267 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#home-logo {
+    width: 95px;
+    height: 52px;
+    position:absolute;
+    left:50%;
+    top:37px;
+    margin-left:-47px;
+}
+
+#home-logo img{
+    width: 95px;
+}
+
+#user-info-box {
+    padding: 45px 0 0 68px;
+    float:left;
+}
+
+#user-info-box span {
+    margin:0 10px 0 0;
+}
+
+
+
+#gnb {
+    padding: 45px 68px 0 0;
+    float:right;
+}
+
+#gnb a {
+    padding:0 5px;
+}
+
+#center_for_question {
+    display:none;
+    margin:180px 0 0 0;
+    transition:margin 1.5s ;
+}
+
+h2 {
+    font-size:17px;
+    font-weight:300;
+    
+}
+h3 {
+    font-size:25px;
+    font-weight:100;
+    font-family: 'Lobster', cursive;
+    transition:padding 1s;
+}
+
+#center_for_question h4 {
+    font-size:35px;
+    font-weight:100;
+    padding: 45px 0 35px !important;
+    transition:padding 1.5s;
+}
+
+.underline {
+    width:40px;
+    height:20px;
+    border-bottom: 1px solid #fff;
+    display:block;
+    margin: 0 auto;
+}
+
+#answer_box {
+    display:none;
+}
+
+#answer_box textarea {
+    background:rgba(0,0,0,0);
+    border:none;
+    outline:none;
+    color:#fcff00;
+    font-size:25px;
+    font-weight:100;
+    text-align:center;
+}
+
+::-webkit-textarea-placeholder {
+   color: #fcff00;
+   font-weight:100;
+}
+:-moz-textarea-placeholder { /* Firefox 18- */
+   color: #fcff00;
+   font-weight:100;
+}
+::-moz-textarea-placeholder {  /* Firefox 19+ */
+   color: #fcff00;
+   font-weight:100;
+}
+.placeholder {  
+   color: #fcff00;
+   font-weight:100;
+}
+
+
+.btn_answer {
+    width:116px;
+    height:40px;
+    line-height:40px;
+    background:#fff;
+    border-radius:5px;
+    display:none;
+    margin:0 auto;
+    color:#323232;
+    font-weight:300;
+    cursor:pointer;
+    transition:background 0.8s;
+}
+.btn_answer:hover {
+    background:#000;
+    color:#fff;
+}
+.btn_answer_submit {
+    width:116px;
+    height:40px;
+    line-height:40px;
+    background:#fff;
+    border-radius:5px;
+    display:none;
+    margin:0 auto;
+    color:#323232;
+    font-weight:300;
+    cursor:pointer;
+    transition:background 0.8s;
+}
+.btn_answer_submit:hover {
+    background:#000;
+    color:#fff;
+}
+
+#center_for_answer {
+    display:none;
+    margin:185px 0 0 0;
+    transition:margin 0.8s ;
+}
+
+#center_for_answer div {
+    width:645px;
+    height:346px;
+    padding:0 30px 20px 30px;
+    border-radius:10px;
+    background:url('/assets/answercard-bg.png') ;
+    background-size:750px auto;
+    margin:20px auto 0;
+    color:#000;
+}
+
+#center_for_answer h4 {
+    font-size:35px;
+    font-weight:500;
+    padding:42px 0 35px;
+}
+
+#center_for_answer p {
+    font-size:20px;
+    font-weight:300;
+    line-height: 1.5;
+    margin:0;
+}
+
+//마이해먹
+
+.inner_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#page_title {
+    width:100%;
+}
+
+#page_title h2{
+    width:500px;
+    padding: 60px 0 0 0;
+    text-align:center;
+    margin:0 auto;
+}
+
+#page_title .underline {
+    width:40px;
+    height:15px;
+    border-bottom: 1px solid #fff;
+    display:block;
+    margin: 0 auto 20xp;
+}
+
+.hammock {
+    width:125px;
+    height:268px;
+    background:url('/assets/hammock-graphic.png') center;
+    background-size:100% auto;
+    float:right;
+    margin:0 auto ;
+}
+
+
+#cards_box {
+    width:100%;
+    height:450px;
+    margin:30px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+#cards_box .answer_card {
+    width:256px;
+    height:268px;
+    border-radius:5px;
+    background:#fff;
+    color:#000;
+    float:right;
+    
+}
+
+#cards_box .underline {
+    width:40px;
+    height:20px;
+    border-bottom: 1px solid #000;
+    display:block;
+    margin: 0 auto;
+}
+
+#cards_box h3 {
+    width:190px;
+    padding:30px 0 0 0;
+    color:#000;
+    margin:0 auto;
+}
+#cards_box h4 {
+    width:190px;
+    margin:0 auto;
+    color:#000;
+    font-size:20px;
+    font-weight:600;
+    line-height: 1.2;
+    padding: 20px 0 60px 0;
+} 
+
+#cards_box p {
+    width:200px;
+    margin:0 auto;
+    font-size:14px;
+    font-weight:100;
+}
+
+.card {
+    width:381px;
+    float:right;
+}
+
+.empty_card {
+    width:540px;
+    height:268px;
+    float:right;
+}
+
+.owl-item {
+    width:381px !important;
+}

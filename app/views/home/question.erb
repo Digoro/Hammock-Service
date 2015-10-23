@@ -1,0 +1,18 @@
+<div id="video-container">
+    <video autoplay loop class="fillWidth">
+        <source src="/img/NYC-Traffic.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="/img/NYC-Traffic.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+</div>
+<div id="container">
+    <h1><%= @todayQuestion.item %></h1>
+    <h3><%= @todayQuestion._date %></h3>
+    </hr>
+    <form action="/home/answer" method="POST" enctype="multipart/form-data">
+        <input style="display:none;" type="text" value="<%=@today%>" name="question"></input>
+        Name : <%= current_user.email %><br>
+        Answer : <br><textarea rows="3" cols="50" name="content"></textarea><br>
+        <input type="submit" value="마침표"/>
+        <br>
+    </form>
+</div>

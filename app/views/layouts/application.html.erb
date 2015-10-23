@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>해먹 | 질문을 통해 나를 발견하는 공간 </title>
+  <link rel"shortcut icon" href="favicon.ico">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='/assets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/owl.carousel.css">
+  <link rel="stylesheet" href="/owl.theme.css">  
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+  <style>
+      #flash_alert{
+          color:red;
+          font-size:3px;
+      }
+      #flash_notice{
+          color:blue;
+          font-size:3px;
+      }
+  </style>
+  <script>
+        $( 'document' ).ready(function() {
+          $( "#failed" ).effect( "shake");
+          $("#failed").delay(1000).fadeOut("slow");
+          
+          $( "#successed" ).effect( "shake");
+          $("#successed").delay(1000).fadeOut("slow");
+        });
+        
+  </script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+<%= yield %>
+<%= render :partial => "include/footer" %>
+</body>
+</html>

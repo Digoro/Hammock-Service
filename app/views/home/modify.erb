@@ -1,0 +1,7 @@
+<p style="color:black;"><%= @previousAnswer._date %></p>
+<p><%= @previousAnswer.todayQuestion %></p>
+<form action="/home/updateAnswer" method="GET">
+<textarea name="changedAnswer"><%= @previousAnswer.usersAnswer %></textarea>
+<input type="submit" value="수정하기">
+</form>
+
